@@ -1,0 +1,51 @@
+{
+	"name": "article",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"id": {
+			"type": "string",
+			"id":true,
+			"generated": true
+		},
+		"url": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		},
+		"image": {
+			"type": "string"
+		},
+		"topics": {
+			"type": [
+			         "string"
+			         ]
+		},
+		"sentiment": {
+			"type": "number"
+		},
+		"words": {
+			"type": "number"
+		},
+		"difficulty": {
+			"type": "number"
+		},
+		"minutes": {
+			"type": "number"
+		},
+		"votes": {
+			"type": [
+			         "string"
+			         ]
+		}
+	},
+	"mixins": {"Timestamp": true},
+	"validations": [],
+	"relations": {},
+	"acls": [],
+	"methods": {}
+}
