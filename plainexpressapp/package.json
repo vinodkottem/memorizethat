@@ -1,0 +1,14 @@
+{
+  "name": "memorizethat",
+  "version": "1.0.1",
+  "description": "I will help you to remember things",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
