@@ -43,7 +43,9 @@
 			         ]
 		}
 	},
-	"mixins": {"Timestamp": true},
+	"mixins": {"Timestamp": {
+	       "myOption": "yes it is gone"
+	     }},
 	"validations": [],
 	"relations": {},
 	"acls": [],
