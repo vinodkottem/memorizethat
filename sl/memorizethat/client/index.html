@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<style>
+.input-group {
+
+   margin: 10px;
+   padding: 10px;
+   border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+} 
+img{
+   float:right;
+   /* top: 0px;
+   right: 0px; */
+   width:42px;
+   height:42px;
+   
+}
+.div-conatiner {
+   float: left;
+   margin: 10px;
+   padding: 10px;
+   max-width: 300px;
+   height: 300px;
+   border: 1px solid black;
+} 
+p {
+  text-align:left; 
+  vertical-align: middle;  
+   word-wrap: break-word; 
+}
+ 
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    /* $("button").click(function(){ */
+        $.get("http://localhost:3000/api/articles", function(data, status){
+            //alert("Data: " + data.data + "\nStatus: " + status);
+        	 displayAllImages(data.data);
+        });
+   /*  }); */
+});
+
+function displayAllImages(data) {       
+        var htmlText = '';
+        for ( var key in data ) {
+            htmlText += '<div class="div-conatiner">';
+            htmlText += '<img alt = "myImage" src = '+data[key].image+'/>';
+            htmlText += '<p class="p-name"> Title: ' + data[key].title + '</p>';
+            htmlText += '<p class="p-loc"> Words: ' + data[key].words + '</p>';
+            htmlText += '<p class="p-desc"> Topics: ' + data[key].topics.toString().replace(/,/g, ", "); + '</p>';
+            htmlText += '</div>';
+        }
+        $('body').append(htmlText);
+};
+</script>
+</head>
+<body>
+
+<div class="input-group">
+  <input type="text" class="form-control" size="70%">
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button">Go!</button>
+  </span>
+</div>
+
+<h2> ADD A NEW LINK</h2>
+
+<!-- <button>Send an HTTP GET request to a page and get the result back</button> -->
+</body>
+</html>
