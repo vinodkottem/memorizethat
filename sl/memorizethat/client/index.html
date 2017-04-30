@@ -41,7 +41,7 @@ p {
 <script>
 $(document).ready(function(){
     /* $("button").click(function(){ */
-        $.get("http://localhost:3000/api/articles", function(data, status){
+        $.get("/api/articles", function(data, status){
             //alert("Data: " + data.data + "\nStatus: " + status);
         	 displayAllImages(data.data);
         });
