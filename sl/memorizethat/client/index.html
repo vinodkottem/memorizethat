@@ -2,6 +2,9 @@
 <html lang="en-us">
 <head>
 <style>
+a {
+    text-decoration: none !important;
+}
 .input-group {
 
    margin: 10px;
@@ -50,7 +53,8 @@ function displayAllImages(data) {
         for ( var key in data ) {
             htmlText += '<div class="div-conatiner">';
             htmlText += '<img alt = "myImage" src = '+data[key].image+'/>';
-            htmlText += '<p class="p-name"> Title: ' + data[key].title + '</p>';
+            htmlText += '<p><b><a href='+data[key].url+'>' + data[key].title + '</a></b></p>';
+            /* htmlText += '<p class="p-name"> Title: ' + data[key].title + '</p>'; */
             htmlText += '<p class="p-loc"> Words: ' + data[key].words + '</p>';
             htmlText += '<p class="p-desc"> Topics: ' + data[key].topics.toString().replace(/,/g, ", "); + '</p>';
             htmlText += '</div>';
