@@ -40,40 +40,47 @@ p {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    /* $("button").click(function(){ */
         $.get("/api/articles", function(data, status){
-            //alert("Data: " + data.data + "\nStatus: " + status);
         	 displayAllImages(data.data);
         });
-   /*  }); */
-});
-
-function displayAllImages(data) {       
-        var htmlText = '';
-        for ( var key in data ) {
-            htmlText += '<div class="div-conatiner">';
-            htmlText += '<img alt = "myImage" src = '+data[key].image+'/>';
-            htmlText += '<p><b><a href='+data[key].url+'>' + data[key].title + '</a></b></p>';
-            /* htmlText += '<p class="p-name"> Title: ' + data[key].title + '</p>'; */
-            htmlText += '<p class="p-loc"> Words: ' + data[key].words + '</p>';
-            htmlText += '<p class="p-desc"> Topics: ' + data[key].topics.toString().replace(/,/g, ", "); + '</p>';
-            htmlText += '</div>';
-        }
-        $('body').append(htmlText);
-};
+        $('#vinod').keypress(function (e) {
+		var key = e.which;
+			if (key == 13) {
+				var txt = $("input").val();
+				$.post("/api/articles", {
+					url : txt
+				}, function(result) {
+					if(result.error.status != 200)
+						alert(result.error.message);
+					else{
+						alert(result.data.message);
+						location.reload();
+					}
+				});
+			}
+		});
+	});
+	function displayAllImages(data) {
+		var htmlText = '';
+		for ( var key in data) {
+			htmlText += '<div class="div-conatiner">';
+			htmlText += '<img alt = "myImage" src = '+data[key].image+'/>';
+			htmlText += '<p><b><a href='+data[key].url+'>' + data[key].title+'</a></b></p>';
+			/* htmlText += '<p class="p-name"> Title: ' + data[key].title + '</p>'; */
+			htmlText += '<p class="p-loc"> Words: ' + data[key].words + '</p>';
+			htmlText += '<p class="p-desc"> Topics: '
+					+ data[key].topics.toString().replace(/,/g, ", ");
+			+'</p>';
+			htmlText += '</div>';
+		}
+		$('body').append(htmlText);
+	};
 </script>
 </head>
 <body>
-
 <div class="input-group">
-  <input type="text" class="form-control" size="70%">
-  <span class="input-group-btn">
-    <button class="btn btn-default" type="button">Go!</button>
-  </span>
+  <input id="vinod" type="text" class="form-control" size="70%"><b>HIT<i> ENTER</i></b>
 </div>
-
 <h2> ADD A NEW LINK</h2>
-
-<!-- <button>Send an HTTP GET request to a page and get the result back</button> -->
 </body>
 </html>
