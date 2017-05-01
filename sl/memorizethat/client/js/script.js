@@ -31,7 +31,7 @@ $(document).ready(function(){
 			htmlText += '<p class="p-desc"> Topics: '
 					+ data[key].topics.toString().replace(/,/g, ", ");
 			+'</p>';
-			htmlText += ' <div class="inside"><textarea></textarea></div>';
+			htmlText += ' <div class="inside"><textarea placeholder="Add notes... Work in progress"></textarea></div>';
 			htmlText += '</div>';
 		}
 		$('body').append(htmlText);
