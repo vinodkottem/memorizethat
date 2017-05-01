@@ -3,6 +3,18 @@ a {
 	text-decoration: none !important;
 }
 
+.linkref {
+    color:#069; 
+    cursor:pointer;
+}
+.pagedisplay {
+    display:none;
+    position:absolute;
+    border:1px solid #000;
+    width:400px;
+    height:400px;
+}
+
 textarea {
 	height: 50px;
 	width: 94%;
