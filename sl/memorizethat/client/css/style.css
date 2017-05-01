@@ -1,0 +1,58 @@
+<style type="text/css">
+a {
+	text-decoration: none !important;
+}
+
+textarea {
+	height: 98px;
+	width: 94%;
+	padding: 1%;
+	border: inset 4px orange;
+	resize: none;
+}
+
+.child {
+	position: bottom;
+}
+
+.input-group {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+img {
+	float: right;
+	/* top: 0px;
+   right: 0px; */
+	width: 42px;
+	height: 42px;
+}
+/* .outside {
+    
+} */
+.inside {
+	position: absolute;
+	bottom: 20px;
+	width: 96%;
+	height: 100px;
+}
+
+.div-conatiner {
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	max-width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	position: relative;
+}
+
+p {
+	text-align: left;
+	vertical-align: middle;
+	word-wrap: break-word;
+}
+</style>
