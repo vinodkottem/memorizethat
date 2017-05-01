@@ -35,5 +35,8 @@
   "article": {
     "dataSource": "cloudant",
     "public": true
+  },
+  "Email": {
+    "dataSource": "email"
   }
 }

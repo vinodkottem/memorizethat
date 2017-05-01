@@ -33,7 +33,6 @@ module.exports = function(Article) {
 		}
 		next();
 	});
-	
 	Article.summary = (url,cb) =>{
 		superagent
 		.get(url)
